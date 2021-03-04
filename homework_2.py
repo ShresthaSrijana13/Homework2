@@ -6,7 +6,8 @@ import datetime  # to import current date
 month_dict = {"january": "1", "february": "2", "march": "3", "april": "4", "may": "5", "june": "6", "july": "7",
               "august": "8", "september": "9", "october": "10", "november": "11", "december": "12"}
 
-input_file = open('inputDates.txt', 'r')
+input_file = open('inputDates.txt', 'r')  # open input file to read
+output_file = open('parsedDates.txt', 'w')  # open input file to write
 
 for line in input_file:
     first_space = line.find(" ")  # using find function to get the index of the first space
@@ -25,4 +26,9 @@ for line in input_file:
             ans_date = datetime.datetime(int(year), int(month_number), int(day))
             current_date = datetime.datetime.now()  # get the current date in year month day format
             if current_date >= ans_date:  # compare current date with the result date
-                print(ans)  # print the final result
+
+                output_file.write(ans)  # write result in output file
+                output_file.write("\n")  # next line
+
+output_file.close()  # close output file
+input_file.close()   # close input file
