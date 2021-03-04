@@ -6,7 +6,7 @@ import datetime  # to import current date
 month_dict = {"january": "1", "february": "2", "march": "3", "april": "4", "may": "5", "june": "6", "july": "7",
               "august": "8", "september": "9", "october": "10", "november": "11", "december": "12"}
 
-input_file = ['march 9, 2020']
+input_file = open('inputDates.txt', 'r')
 
 for line in input_file:
     first_space = line.find(" ")  # using find function to get the index of the first space
